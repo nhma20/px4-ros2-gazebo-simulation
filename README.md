@@ -1,11 +1,13 @@
 # PX4 ROS2 Gazebo Simulation
 A guide on how to fly ROS2-based multi-rotors manually and autonomously in Gazebo with PX4 in the loop
 
+(March 20th 2023) Currently under construction.
+
 Derived from: 
-https://docs.px4.io/main/en/ros/ros2_comm.html
-https://github.com/PX4/PX4-user_guide/blob/main/en/middleware/xrce_dds.md
-https://github.com/nhma20/mmWave_ROS2_PX4_Gazebo
-https://github.com/nhma20/radar_cable_follower_HW
+- https://docs.px4.io/main/en/ros/ros2_comm.html
+- https://github.com/PX4/PX4-user_guide/blob/main/en/middleware/xrce_dds.md
+- https://github.com/nhma20/mmWave_ROS2_PX4_Gazebo
+- https://github.com/nhma20/radar_cable_follower_HW
 
 Tested with:
 - Ubuntu 22.XX.X
@@ -37,6 +39,7 @@ Install ROS2:
   - `sudo apt update`
   - `sudo apt upgrade`
   - `sudo apt install ros-humble-desktop`
+  - `sudo apt install ros-dev-tools`
   - `pip3 install --user -U empy pyros-genmsg setuptools`
   - Create ROS2 workspace:
   `mkdir -p ros2_ws/src`
