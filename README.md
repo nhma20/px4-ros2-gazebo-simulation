@@ -19,42 +19,54 @@ Tested with:
 
 ## Installation
 
+Create workspace:  
+```sh
+mkdir -p px4_sim_ws
+cd px4_sim_ws
+```
+
 Setup XRCE-DDS Agent and Client:
-  - `git clone https://github.com/eProsima/Micro-XRCE-DDS-Agent.git`
-  - `cd Micro-XRCE-DDS-Agent`
-  - `mkdir build`
-  - `cd build`
-  - `cmake ..`
-  - `make`
-  - `sudo make install`
-  - `sudo ldconfig /usr/local/lib/`
+```sh
+  git clone https://github.com/eProsima/Micro-XRCE-DDS-Agent.git
+  cd Micro-XRCE-DDS-Agent
+  mkdir build
+  cd build
+  cmake ..
+  make
+  sudo make install
+  sudo ldconfig /usr/local/lib/
+  ```
+   
      
-     
-Install ROS2:
-  - `sudo apt install software-properties-common`
-  - `sudo add-apt-repository universe`
-  - `sudo apt update && sudo apt install curl`
-  - `sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg`
-  - `echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU_CODENAME) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null`
-  - `sudo apt update`
-  - `sudo apt upgrade`
-  - `sudo apt install ros-humble-desktop`
-  - `sudo apt install ros-dev-tools`
-  - `pip3 install --user -U empy pyros-genmsg setuptools`
-  - Create ROS2 workspace:
-  `mkdir -p ros2_ws/src`
-  - Get message definitions and example project:
-  `cd ros2_ws/src`
-  `git clone https://github.com/PX4/px4_msgs.git`
-  `git clone https://github.com/PX4/px4_ros_com.git`
-  - Build workspace:
-  `source /opt/ros/humble/setup.bash`
-  `colcon build`
+Install ROS2:  
+```sh
+  cd ../..  
+  sudo apt install software-properties-common
+  sudo add-apt-repository universe
+  sudo apt update && sudo apt install curl
+  sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
+  echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU_CODENAME) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
+  sudo apt update  
+  sudo apt upgrade  
+  sudo apt install ros-humble-desktop
+  sudo apt install ros-dev-tools
+  pip3 install --user -U empy pyros-genmsg setuptools
+  ```
+  - Create ROS2 workspace:  
+  `mkdir -p ros2_ws/src`  
+  - Get message definitions and example project:  
+  `cd ros2_ws/src`  
+  `git clone https://github.com/PX4/px4_msgs.git`  
+  `git clone https://github.com/PX4/px4_ros_com.git`  
+  - Build workspace:  
+  `source /opt/ros/humble/setup.bash`  
+  `cd ..`  
+  `colcon build`   
   
   
 Install PX4: 
-  - PX4:
-    - ```sh
+  - PX4:   
+     ```sh
       git clone https://github.com/PX4/PX4-Autopilot.git --recursive
       bash ./PX4-Autopilot/Tools/setup/ubuntu.sh
       ```
